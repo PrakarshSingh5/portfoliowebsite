@@ -15,7 +15,7 @@ export const Work = () => {
   return (
     <section
       id="projects"
-      className="pt-12 px-[12vw] md:px-[7vw] lg:px-[14vw] font-sans relative"
+      className="pt-24 px-[12vw] md:px-[7vw] lg:px-[14vw] font-sans relative"
     >
       {/* Section Title */}
       <div className="text-center mb-16">

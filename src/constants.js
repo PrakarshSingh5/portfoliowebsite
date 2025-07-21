@@ -45,9 +45,9 @@ import mmmut from './assets/education_logo/mmmut.jpeg';
 // import vpsLogo from './assets/education_logo/vps_logo.png';
 
 // Project Section Logo's
-import portfolio from './assets/work_logo/portfolio.png';
-import homygo from './assets/work_logo/homygo.png';
-import travel from './assets/work_logo/travel.png';
+import portfolio from './assets/work_logo/portfolio.jpeg';
+import blog from './assets/work_logo/blog.png';
+import snaptrade from './assets/work_logo/snaptrade.png'
 
 
 
@@ -162,27 +162,27 @@ export const projects = [
       "A responsive MERN stack portfolio showcasing my projects, skills, and testimonials.Built with Tailwind CSS, Framer Motion, and real- time MongoDB Atlas integration.Includes smooth animations, carousel, and a clean, mobile - friendly design.",
       image: portfolio,
   tags: ["HTML", "Tailwind CSS", "JavaScript", "React JS", "MongoDB", "Express.js", "Node.js"],
-  github: "https://github.com/PrakarshSingh5",
-  webapp: "https://portfolio-frontend-jwq5.onrender.com/",
+  github: "https://github.com/PrakarshSingh5/portfoliowebsite",
+  webapp: "#",
     },
 {
   id: 1,
     title: "HomyGo",
       description:
-  "A MERN-based Airbnb-inspired app for property listing and booking. Features user auth, search filters, and MongoDB Atlas backend. Built to demonstrate full-stack development with a modern UI.",
-    image: homygo,
+  "Developed a comprehensive full-stack web application leveraging React.js, Redux Toolkit, and React Router for a dynamic and responsive frontend UI. Implemented a robust backend infrastructure using Node.js, Express, and MongoDB, with Mongoose asODM, ensuring efficient data management and API interactions Integrated advanced features including JWT authentication, Razorpay payment processing, and Cloudinary for media management", 
+    image: snaptrade,
       tags: ["Node.js", "MongoDB", "Express", "HTML", "CSS", "JavaScript"],
-        github: "https://github.com/anshmanitripathi/Homygo",
-          webapp: "https://github.com/anshmanitripathi/Homygo",
+        github: "https://github.com/PrakarshSingh5",
+          webapp: "https://snap-trade.vercel.app/",
     },
 {
   id: 2,
-    title: "Travelling Website",
+    title: "Blog Website",
       description:
-  "A static travel site using HTML, CSS, and JavaScript.Highlights destinations with animations and responsive layouts.Perfect for showcasing front-end design and interactivity.",
-    image: travel,
+  "Created a sophisticated web application leveraging Node.js for efficient API management alongside React as the client-side framework",
+    image: blog,
       tags: ["HTML", "CSS", "JavaScript"],
-        github: "https://github.com/anshmanitripathi/learning.travel.website",
-          webapp: "https://anshmanitripathi.github.io/learning.travel.website/",
+        github: "https://github.com/PrakarshSingh5",
+          webapp: "https://project-tan-seven-19.vercel.app/",
     },
   ];  
