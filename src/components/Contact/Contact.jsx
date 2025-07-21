@@ -101,9 +101,11 @@ export const Contact = () => {
         <div className="w-full md:w-[80%] lg:w-[70%] mt-10 flex flex-col items-start">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">Our social media</h3>
           <div className="flex flex-wrap gap-8 text-lg text-gray-900">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-black">Linkedin</a>
-            <a href="mailto:hello@rerter.com" className="underline hover:text-black">hello@rerter.com</a>
-            <a href="#" className="underline hover:text-black">Schedule a call</a>
+            <a href="https://www.linkedin.com/in/prakarshsinghdev/" target="_blank" rel="noopener noreferrer" className="underline hover:text-black">Linkedin</a>
+            <a href="https://github.com/PrakarshSingh5" target="_blank"  rel="noopener nollferrer"  className="underline hover:text-black">Github</a>
+
+            <a href="mailto:prakarshsingh1@gmail.com" className="underline hover:text-black">hello@prakarsh.com</a>
+            {/* <a href="#" className="underline hover:text-black">Schedule a call</a> */}
           </div>
         </div>
       </div>
