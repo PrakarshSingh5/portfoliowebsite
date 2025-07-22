@@ -48,8 +48,7 @@ export const About = () => {
           </h3>
           {/* About Me Paragraph */}
           <p className="text-base sm:text-lg md:text-lg text-gray-700 mb-10 mt-8 leading-relaxed">
-            I'm a passionate developer focused on building impactful tech solutions at the intersection of 
-            full-stack development and artificial intelligence.
+          I'm a passionate developer driven by a love for problem-solving and building meaningful tech solutions. With a strong foundation in full-stack development and a growing expertise in artificial intelligence, I thrive at the intersection of innovation and impact—transforming complex challenges into elegant, real-world applications.
           </p>
           {/* Resume Button */}
           <a
