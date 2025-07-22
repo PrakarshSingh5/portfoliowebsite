@@ -6,7 +6,8 @@ import { Education } from './components/Education/Education'
 import { Work } from './components/Projects/projects'
 import { Footer } from './components/Footer/Footer'
 import { Contact } from './components/Contact/Contact'
-import { Testimonials } from './components/Testimonials/testimonials';
+// import { Testimonials } from './components/Testimonials/testimonials';
+import LeetCodeProfile from './components/ProblemSolving/Problem'
 import './App.css'
 import BlurBlob from './BlurBlob'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -29,6 +30,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             {/* <Route path="/testimonials" element={<Testimonials />} /> */}
             <Route path="/projects" element={<Work />} />
+            <Route path ="/problems" element={<LeetCodeProfile/>} />
           </Routes>
         </div>
         <Footer />

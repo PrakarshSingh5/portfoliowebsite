@@ -40,14 +40,14 @@ export const Navbar = () => {
 
 
   // smooth scroll function
-  const handleMenuItemClick = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-    setActiveSection(sectionId);
-    setIsOpen(false);
-  };
+  // const handleMenuItemClick = (sectionId) => {
+  //   const section = document.getElementById(sectionId);
+  //   if (section) {
+  //     section.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  //   setActiveSection(sectionId);
+  //   setIsOpen(false);
+  // };
 
   const menuItems = [
     { path: "/", label: "About" },
@@ -55,7 +55,12 @@ export const Navbar = () => {
     { path: "/projects", label: "Projects" },
     // { path: "/testimonials", label: "Testimonials" },
     { path: "/education", label: "Education" },
-    { path: "/contact", label: "Contact" }
+    { path: "/contact", label: "Contact" 
+  
+    },
+    {
+      path: "/problems", label: "LeetCode"
+    }
   ];
   return (
     <nav className="fixed top-0 w-full z-50 transition-duration-300 px-[7vw] md:px-[7vw] lg:px-[7vw] bg-white md:bg-transparent">
