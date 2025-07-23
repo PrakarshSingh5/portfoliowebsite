@@ -27,6 +27,9 @@ import githubLogo from './assets/tech_logo/github.png';
 import vscodeLogo from './assets/tech_logo/vscode.png';
 import postmanLogo from './assets/tech_logo/postman.png';
 import mcLogo from './assets/tech_logo/mc.png';
+import redis from './assets/tech_logo/redis.png'
+import queue from './assets/tech_logo/queu.png'
+import aws from './assets/tech_logo/aws.png'
 import figmaLogo from './assets/tech_logo/figma.png';
 import netlifyLogo from './assets/tech_logo/netlify.png';
 import vercelLogo from './assets/tech_logo/vercel.png';
@@ -77,8 +80,11 @@ export const SkillsInfo = [
       { name: 'Express JS', logo: expressjsLogo },
       { name: 'MySQL', logo: mysqlLogo },
       { name: 'MongoDB', logo: mongodbLogo },
-      // { name: 'Firebase', logo: firebaseLogo },
-      { name: 'Postgre SQL', logo: postgreLogo },
+      { name: 'Firebase', logo: firebaseLogo },
+      { name: 'Redis', logo: redis },
+      { name: 'Bull MQ', logo: queue },
+      { name: 'AWS S3', logo: aws },
+
     ],
   },
   {
