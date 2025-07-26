@@ -48,7 +48,7 @@ import mmmut from './assets/education_logo/mmmut.jpeg';
 // import vpsLogo from './assets/education_logo/vps_logo.png';
 
 // Project Section Logo's
-import portfolio from './assets/work_logo/portfolio.jpeg';
+import emailscrapper from './assets/work_logo/emailscrapper.jpeg'
 import blog from './assets/work_logo/blog.png';
 import snaptrade from './assets/work_logo/snaptrade.png'
 
@@ -163,12 +163,12 @@ export const education = [
 export const projects = [
   {
     id: 0,
-    title: "Portfolio",
+    title: "Email Scrapper",
     description:
-      "A responsive MERN stack portfolio showcasing my projects, skills, and testimonials.Built with Tailwind CSS, Framer Motion, and real- time MongoDB Atlas integration.Includes smooth animations, carousel, and a clean, mobile - friendly design.",
-      image: portfolio,
-  tags: ["HTML", "Tailwind CSS", "JavaScript", "React JS", "MongoDB", "Express.js", "Node.js"],
-  github: "https://github.com/PrakarshSingh5/portfoliowebsite",
+      "Developed a Python script that connects to the Gmail API to automatically fetch attachments from emails sent by specific organization domains. Extracted files and metadata are saved in JSON format for streamlined access and processing.",
+      image: emailscrapper,
+  tags: ["Python", "Gmail API", "OAuth 2.0", "JSON"],
+  github: "https://github.com/PrakarshSingh5/EmailScrapper",
   webapp: "#",
     },
 {
