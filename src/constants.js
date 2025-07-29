@@ -49,6 +49,7 @@ import mmmut from './assets/education_logo/mmmut.jpeg';
 
 // Project Section Logo's
 import emailscrapper from './assets/work_logo/emailscrapper.jpeg'
+import algo from './assets/work_logo/algo.jpeg'
 import blog from './assets/work_logo/blog.png';
 import snaptrade from './assets/work_logo/snaptrade.png'
 
@@ -171,9 +172,19 @@ export const projects = [
   github: "https://github.com/PrakarshSingh5/EmailScrapper",
   webapp: "#",
     },
+    {
+      id: 1,
+      title: "Algorithm Visualize",
+      description:
+        "The Algorithm Visualizer is an interactive web application designed to bring the abstract world of sorting algorithms to life. By representing data as dynamic bars, the project provides a clear and intuitive way to understand how various sorting algorithms work step-by-step.",
+        image: algo,
+    tags: ["React", "DSA", "Javascript", "CSS"],
+    github: "https://github.com/PrakarshSingh5/DSA-algovisulsizer",
+    webapp: "https://dsa-algovisulsizer.vercel.app/",
+      },
 {
-  id: 1,
-    title: "HomyGo",
+  id: 2,
+    title: "SnapTrade",
       description:
   "Developed a comprehensive full-stack web application leveraging React.js, Redux Toolkit, and React Router for a dynamic and responsive frontend UI. Implemented a robust backend infrastructure using Node.js, Express, and MongoDB, with Mongoose asODM, ensuring efficient data management and API interactions Integrated advanced features including JWT authentication, Razorpay payment processing, and Cloudinary for media management", 
     image: snaptrade,
@@ -182,7 +193,7 @@ export const projects = [
           webapp: "https://snap-trade.vercel.app/",
     },
 {
-  id: 2,
+  id: 3,
     title: "Blog Website",
       description:
   "Created a sophisticated web application leveraging Node.js for efficient API management alongside React as the client-side framework",
