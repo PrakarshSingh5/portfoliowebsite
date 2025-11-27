@@ -1,66 +1,39 @@
-import React from 'react'
-import { SkillsInfo } from "../../constants";
-import Tilt from "react-parallax-tilt";
+import React from 'react';
+import { SkillsInfo } from '../../constants';
 
 export const Skills = () => {
   return (
-    <section
-    id="skills"
-    className="pt-24 px-[12vw] md:px-[7vw] lg:px-[14vw] font-sans bg-skills-gradient clip-path-custom"
-  >
-    {/* Section Title */}
-    <div className="text-center mb-8">
-      <h2 className="text-3xl sm:text-4xl font-bold text-[black]">SKILLS</h2>
-      <div className="w-32 h-1 bg-[gray] mx-auto mt-2"></div>
-      <p className="text-gray-400 mt-4 text-lg font-semibold">
-      A collection of my technical skills and expertise honed through various projects and experiences.
-      </p>
-    </div>
-
-    {/* Skill Categories */}
-    <div className="flex flex-wrap gap-1 lg:gap-5 py-10 justify-between">
-      {SkillsInfo.map((category) => (
-        <div
-          key={category.title}
-          className="bg-gray backdrop-blur-md px-6 sm:px-10 py-8 sm:py-6 mb-10 w-full sm:w-[48%] rounded-2xl border border-white 
-          shadow-[0_0_20px_1px_rgba(114,114,114,0.7)]"
-        >
-          <h3 className="text-2xl sm:text-3xl font-semibold text-black-400 mb-4 text-center">
-            {category.title}
-          </h3>
-
-          {/* Skill Items - 3 per row on larger screens */}
-          <Tilt
-            key={category.title}
-            tiltMaxAngleX={0}
-            tiltMaxAngleY={0}
-            perspective={1000}
-            scale={1.05}
-            transitionSpeed={1000}
-            gyroscope={true}
-          >
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full">
-              {category.skills.map((skill) => (
-                <div
-                  key={skill.name}
-                  className="flex items-center justify-center space-x-2 bg-transparent border-2 border-gray-200 rounded-3xl py-2 px-2 sm:py-2 sm:px-2 text-center"
-                >
-                  <img
-                    src={skill.logo}
-                    alt={`${skill.name} logo`}
-                    className="w-6 h-6 sm:w-8 sm:h-8"
-                    color='black'
-                  />
-                  <span className="text-xs sm:text-sm text-black-300">
-                    {skill.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </Tilt>
+    <section id="skills" className="py-24">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="mb-20 text-center">
+          <h2 className="text-3xl md:text-4xl font-medium mb-4 text-text-primary tracking-tight">Technical <span className="text-slate-400">Skills</span></h2>
+          <p className="text-text-secondary max-w-2xl mx-auto font-light">
+            The technologies and tools I use to build scalable solutions.
+          </p>
         </div>
-      ))}
-    </div>
-  </section>
-  )
-}
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {SkillsInfo.map((category, index) => (
+            <div key={index} className="glass-card p-8 border-none shadow-soft hover:shadow-card bg-white">
+              <h3 className="text-lg font-medium text-text-primary mb-8 border-b border-slate-100 pb-4 tracking-tight">{category.title}</h3>
+              <div className="grid grid-cols-2 gap-6">
+                {category.skills.map((skill, i) => (
+                  <div key={i} className="flex flex-col items-center gap-3 group">
+                    <div className="w-12 h-12 bg-slate-50 rounded-xl flex items-center justify-center p-2 group-hover:bg-slate-100 transition-colors">
+                      {skill.logo ? (
+                        <img src={skill.logo} alt={skill.name} className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
+                      ) : (
+                        <div className="w-full h-full bg-slate-200 rounded-full"></div>
+                      )}
+                    </div>
+                    <span className="text-xs text-text-secondary group-hover:text-text-primary transition-colors text-center font-medium tracking-wide">{skill.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};

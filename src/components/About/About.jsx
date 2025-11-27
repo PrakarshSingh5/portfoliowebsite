@@ -1,86 +1,60 @@
 import React from 'react';
-import { TypeAnimation } from 'react-type-animation';
-import Tilt from 'react-parallax-tilt';
-import profileImg from "../../assets/profile.jpeg";
-
-
-
-
+import { Code, Server, Database, Cpu } from 'lucide-react';
 
 export const About = () => {
   return (
-    <section
-      id="about"
-      className="pt-16 px-[7vw] md:px-[7vw] lg:px-[14vw] font-sans mt-16 md:mt-24 lg:mt-16"
-    >
-      <div className="flex flex-col-reverse md:flex-row justify-between items-center">
-        {/* Left Side */}
-        <div className="md:w-1/2 text-center md:text-left mt-8 md:mt-0">
-          {/* Greeting */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[gray] mb-2 leading-tight">
-            Hi, I am
-          </h1>
-          {/* Name */}
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[black] mb-4 leading-tight">
-            Prakarsh Singh
-          </h2>
-          {/* Skills Heading with Typing Effect */}
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 leading-tight">
-            <span className="text-[gray]">I am a </span>
-            <TypeAnimation
-              sequence={[
-                'Fullstack Developer',
-                2000,
-                'Problem Solver',
-                2000,
-                'AI Enthusiast',
-                2000,
-                'Freelancer',
-                2000,
-              ]}
-              speed={50}
-              wrapper="span"
-              repeat={Infinity}
-              cursor={true}
-              style={{ display: 'inline-block', color: 'black' }}
-            />
-
-          </h3>
-          {/* About Me Paragraph */}
-          <p className="text-base sm:text-lg md:text-lg text-gray-700 mb-10 mt-8 leading-relaxed">
-          I'm a passionate developer driven by a love for problem-solving and building meaningful tech solutions. With a strong foundation in full-stack development and a growing expertise in artificial intelligence, I thrive at the intersection of innovation and impact—transforming complex challenges into elegant, real-world applications.
-          </p>
-          {/* Resume Button */}
-          <a
-            href="https://drive.google.com/file/d/1gCsiPx1OCQ821Qwjup-IrpdbM0W21eOM/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block text-white py-3 px-8 rounded-full mt-5 text-lg font-bold transition duration-300 transform hover:scale-105"
-            style={{
-              background: 'linear-gradient(90deg, gray, black)',
-              boxShadow: '0 0 2px #gray, 0 0 2px #gray, 0 0 40px gray',
-            }}
-          >
-            DOWNLOAD CV
-          </a>
+    <section id="about" className="py-24 relative bg-slate-50/50">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="mb-20">
+          <h2 className="text-3xl md:text-4xl font-medium mb-4 text-text-primary tracking-tight">About <span className="text-slate-400">Me</span></h2>
+          <div className="w-16 h-0.5 bg-slate-300"></div>
         </div>
-        {/* Right Side */}
-        <div className="md:w-1/2 flex justify-center md:justify-end">
-          <Tilt
-            className="w-48 h-48 sm:w-64 sm:h-64 md:w-[24rem] md:h-[24rem] border-1 border-gray-700 rounded-full"
-            tiltMaxAngleX={0}
-            tiltMaxAngleY={0}
-            perspective={1000}
-            scale={1.05}
-            transitionSpeed={1000}
-            gyroscope={true}
-          >
-            <img
-              src={profileImg}
-              alt="Prakarsh Singh"
-              className="w-full h-full rounded-full object-cover drop-shadow-[0_10px_20px_rgba(114,114,114,0.7)]"
-            />
-          </Tilt>
+
+        <div className="grid md:grid-cols-2 gap-16 items-start">
+          <div className="space-y-8 text-text-secondary text-lg leading-relaxed font-light">
+            <p>
+              Hello! I'm <span className="text-text-primary font-medium">Prakarsh Singh</span>, a passionate Backend Developer and AI Automation Engineer.
+              My journey in tech is driven by a curiosity to understand how complex systems work and a desire to build solutions that make a real impact.
+            </p>
+            <p>
+              I specialize in building <span className="text-text-primary font-medium">scalable backend architectures</span>, designing efficient APIs, and integrating <span className="text-text-primary font-medium">AI agents</span> to automate workflows.
+              Whether it's optimizing database queries or deploying microservices, I love the challenge of solving engineering problems.
+            </p>
+            <p>
+              When I'm not coding, you can find me exploring the latest in AI research, contributing to open source, or refining my problem-solving skills on LeetCode.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-6">
+            <div className="glass-card p-8 flex flex-col items-center text-center space-y-4 hover:-translate-y-1 transition-transform border-none shadow-soft hover:shadow-card bg-white">
+              <div className="p-4 bg-slate-50 rounded-2xl text-slate-600">
+                <Server size={28} strokeWidth={1.5} />
+              </div>
+              <h3 className="font-medium text-text-primary text-lg">Backend Dev</h3>
+              <p className="text-sm text-text-secondary font-light">Node.js, Go, Microservices</p>
+            </div>
+            <div className="glass-card p-8 flex flex-col items-center text-center space-y-4 hover:-translate-y-1 transition-transform border-none shadow-soft hover:shadow-card bg-white">
+              <div className="p-4 bg-slate-50 rounded-2xl text-slate-600">
+                <Cpu size={28} strokeWidth={1.5} />
+              </div>
+              <h3 className="font-medium text-text-primary text-lg">AI Automation</h3>
+              <p className="text-sm text-text-secondary font-light">LangChain, LLMs, Agents</p>
+            </div>
+            <div className="glass-card p-8 flex flex-col items-center text-center space-y-4 hover:-translate-y-1 transition-transform border-none shadow-soft hover:shadow-card bg-white">
+              <div className="p-4 bg-slate-50 rounded-2xl text-slate-600">
+                <Database size={28} strokeWidth={1.5} />
+              </div>
+              <h3 className="font-medium text-text-primary text-lg">Database</h3>
+              <p className="text-sm text-text-secondary font-light">Postgres, Redis, Mongo</p>
+            </div>
+            <div className="glass-card p-8 flex flex-col items-center text-center space-y-4 hover:-translate-y-1 transition-transform border-none shadow-soft hover:shadow-card bg-white">
+              <div className="p-4 bg-slate-50 rounded-2xl text-slate-600">
+                <Code size={28} strokeWidth={1.5} />
+              </div>
+              <h3 className="font-medium text-text-primary text-lg">Clean Code</h3>
+              <p className="text-sm text-text-secondary font-light">TypeScript, Testing, CI/CD</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

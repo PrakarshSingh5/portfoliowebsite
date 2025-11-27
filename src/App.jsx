@@ -1,42 +1,38 @@
-import React from 'react'
+import React from 'react';
 import { Navbar } from './components/Navbar/Navbar';
-import { Skills } from './components/Skills/Skills';
+import { Hero } from './components/Hero/Hero';
 import { About } from './components/About/About';
-import { Education } from './components/Education/Education'
-import { Work } from './components/Projects/projects'
-import { Footer } from './components/Footer/Footer'
-import { Contact } from './components/Contact/Contact'
-// import { Testimonials } from './components/Testimonials/testimonials';
-import LeetCodeProfile from './components/ProblemSolving/Problem'
-import './App.css'
-import BlurBlob from './BlurBlob'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-
-
+import { Experience } from './components/Experience/Experience';
+import { Projects } from './components/Projects/Projects';
+import { Skills } from './components/Skills/Skills';
+import { Contact } from './components/Contact/Contact';
+import { Footer } from './components/Footer/Footer';
+import './App.css';
 
 function App() {
   return (
-    <Router>
-      <div className="flex flex-col min-h-screen">
-        <Navbar />
-        <div className="flex-grow bg-tahiti-dark">
-          <BlurBlob position={{ top: '35%', left: '20%' }} size={{ width: '30%', height: '40%' }} />
-          <div className='absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'></div>
-          <Routes>
-            <Route path="/" element={<About />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/education" element={<Education />} />
-            <Route path="/contact" element={<Contact />} />
-            {/* <Route path="/testimonials" element={<Testimonials />} /> */}
-            <Route path="/projects" element={<Work />} />
-            <Route path ="/problems" element={<LeetCodeProfile/>} />
-          </Routes>
+    <div className="bg-background min-h-screen text-text-primary overflow-x-hidden">
+      <Navbar />
+
+      <main className="relative">
+        {/* Subtle Background Pattern */}
+        <div className="fixed inset-0 pointer-events-none z-0 opacity-40">
+          <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
         </div>
-        <Footer />
-      </div>
-    </Router>
-  )
+
+        <div className="relative z-10">
+          <Hero />
+          <About />
+          <Experience />
+          <Projects />
+          <Skills />
+          <Contact />
+        </div>
+      </main>
+
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;

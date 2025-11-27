@@ -1,112 +1,76 @@
-import React, { useEffect } from 'react'
-import { useState } from 'react';
-import { FiMenu, FiX } from "react-icons/fi";
-import { Link } from 'react-router-dom';
-
+import React, { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 
 export const Navbar = () => {
-
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  // check scroll and change navbar background
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-
-      const sectionOffsets = menuItems.map(({ id }) => {
-        const el = document.getElementById(id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          return { id, offsetTop: rect.top };
-        }
-        return null;
-      }).filter(Boolean);
-
-      // find the section closest to top (within view)
-      const currentSection = sectionOffsets.find(
-        section => section.offsetTop >= 0 && section.offsetTop < window.innerHeight / 2
-      );
-
-      if (currentSection) {
-        setActiveSection(currentSection.id);
-      }
+      setScrolled(window.scrollY > 20);
     };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-
-  // smooth scroll function
-  // const handleMenuItemClick = (sectionId) => {
-  //   const section = document.getElementById(sectionId);
-  //   if (section) {
-  //     section.scrollIntoView({ behavior: 'smooth' });
-  //   }
-  //   setActiveSection(sectionId);
-  //   setIsOpen(false);
-  // };
-
-  const menuItems = [
-    { path: "/", label: "About" },
-    { path: "/skills", label: "Skills" },
-    { path: "/projects", label: "Projects" },
-    // { path: "/testimonials", label: "Testimonials" },
-    { path: "/education", label: "Education" },
-    { path: "/contact", label: "Contact" 
-  
-    },
-    {
-      path: "/problems", label: "LeetCode"
-    }
+  const navLinks = [
+    { name: 'About', href: '#about' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Contact', href: '#contact' },
   ];
+
+  const scrollToSection = (href) => {
+    setIsOpen(false);
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <nav className="fixed top-0 w-full z-50 transition-duration-300 px-[7vw] md:px-[7vw] lg:px-[7vw] bg-white md:bg-transparent">
-      <div className=' py-5 flex justify-between items-center'>
-        {/* Desktop menu */}
-        <div className="hidden md:flex flex-1 justify-center">
-          <ul className="flex space-x-8 text-[#374151]-400 font-semibold">
-            {menuItems.map((item) => (
-              <li key={item.path}>
-                <Link to={item.path}>{item.label}</Link>
-              </li>
-            ))}
-          </ul>
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'glass py-4' : 'bg-transparent py-8'}`}>
+      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <a href="#" onClick={() => scrollToSection('#hero')} className="text-xl font-display font-medium tracking-tight text-text-primary hover:opacity-70 transition-opacity">
+          Prakarsh.
+        </a>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex space-x-10">
+          {navLinks.map((link) => (
+            <button
+              key={link.name}
+              onClick={() => scrollToSection(link.href)}
+              className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors tracking-wide"
+            >
+              {link.name}
+            </button>
+          ))}
         </div>
 
-        {/* Mobile menu icons */}
-
-        <div className='md:hidden'>
-          {
-            isOpen ? (
-              <FiX className='text-3xl text-[black] cursor-pointer'
-                onClick={() => setIsOpen(false)} />
-            ) : (
-              <FiMenu className='text-3xl text-[black] cursor-pointer'
-                onClick={() => setIsOpen(true)} />
-            )
-          }
-
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button onClick={() => setIsOpen(!isOpen)} className="text-text-primary hover:opacity-70 transition-opacity">
+            {isOpen ? <X size={24} strokeWidth={1.5} /> : <Menu size={24} strokeWidth={1.5} />}
+          </button>
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-full bg-[gray] bg-opacity-30 backdrop-filter backdrop-blur-md z-50 shadow-lg md:hidden">
-          <ul className="flex flex-col items-center space-y-4 py-4 text-[black]">
-            {menuItems.map((item) => (
-              <li
-                key={item.path}
-                className="cursor-pointer hover:text-[black] hover:font-semibold"
-                onClick={() => setIsOpen(false)} // closes the menu after click
-              >
-                <Link to={item.path}>{item.label}</Link>
-              </li>
-            ))}
-          </ul>
+        <div className="md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl border-b border-slate-100 p-8 flex flex-col space-y-6 shadow-soft">
+          {navLinks.map((link) => (
+            <button
+              key={link.name}
+              onClick={() => scrollToSection(link.href)}
+              className="text-text-secondary hover:text-text-primary transition-colors font-medium text-lg text-left"
+            >
+              {link.name}
+            </button>
+          ))}
         </div>
       )}
     </nav>
-  )
-}
+  );
+};
