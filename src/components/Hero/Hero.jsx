@@ -8,7 +8,7 @@ export const Hero = () => {
             <div className="absolute top-20 right-[-10%] w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] -z-10 animate-pulse"></div>
             <div className="absolute bottom-10 left-[-10%] w-[500px] h-[500px] bg-secondary/20 rounded-full blur-[120px] -z-10 animate-pulse delay-1000"></div>
 
-            <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div className="w-full max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
                 
                 {/* Left Content */}
                 <div className="space-y-8 animate-slide-up">
