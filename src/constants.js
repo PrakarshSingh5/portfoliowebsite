@@ -137,7 +137,34 @@ export const education = [
 
 export const projects = [
   {
+    id: 2,
+    title: "Rate Limiter Service",
+    description: "High-performance distributed rate limiting service handling millions of requests. Supports Token Bucket/Sliding Window algorithms, Redis-backed state, GRPC/REST interfaces, and smart webhook notifications.",
+    image: projectPlaceholder,
+    tags: ["TypeScript", "Redis", "Fastify", "Distributed Systems"],
+    github: "https://github.com/PrakarshSingh5/rate-limiter-service",
+    webapp: "#",
+  },
+  {
     id: 1,
+    title: "FinTechKit 🚀",
+    description: "Production-ready Go framework for fintech API integration. Features unified interfaces for Stripe/Razorpay/Plaid, built-in auth management, reliability patterns (circuit breakers, retries), and webhook handling.",
+    image: projectPlaceholder,
+    tags: ["Go", "Fintech", "Stripe/Razorpay", "Fiber"],
+    github: "https://github.com/PrakarshSingh5/fintechkit",
+    webapp: "#",
+  },
+  {
+    id: 3,
+    title: "Trigger Database Engine",
+    description: "Custom database trigger engine with its own DSL (Domain Specific Language). Parse and execute complex rules (ON update WHEN age > 18 DO set eligible=true) with infinite loop prevention and execution logging.",
+    image: projectPlaceholder,
+    tags: ["Node.js", "AST Parsing", "React", "DSL Design"],
+    github: "https://github.com/PrakarshSingh5",
+    webapp: "#",
+  },
+  {
+    id: 4,
     title: "AI Automation System",
     description: "A comprehensive system for automating workflows using AI agents.",
     image: projectPlaceholder,
@@ -146,7 +173,7 @@ export const projects = [
     webapp: "#",
   },
   {
-    id: 3,
+    id: 5,
     title: "URL Shortener",
     description: "High-performance URL shortener built with Go, Redis, and Postgres.",
     image: urlshortner,
@@ -155,21 +182,12 @@ export const projects = [
     webapp: "#",
   },
   {
-    id: 4,
+    id: 6,
     title: "SnapTrade",
     description: "Full-stack image marketplace with payment integration.",
     image: projectPlaceholder,
     tags: ["MERN Stack", "Redux", "Razorpay"],
     github: "https://github.com/PrakarshSingh5",
     webapp: "https://snap-trade.vercel.app/",
-  },
-  {
-    id: 5,
-    title: "Algorithm Visualizer",
-    description: "Interactive visualization of sorting algorithms.",
-    image: algo,
-    tags: ["React", "Algorithms"],
-    github: "https://github.com/PrakarshSingh5/DSA-algovisulsizer",
-    webapp: "https://dsa-algovisulsizer.vercel.app/",
   },
 ];
