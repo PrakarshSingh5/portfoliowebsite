@@ -32,6 +32,9 @@ import mmmut from './assets/education_logo/mmmut.jpeg';
 // Project Images - Only importing what exists
 import algo from './assets/work_logo/algo.jpeg'
 import urlshortner from './assets/work_logo/urlshortner.jpeg'
+import fintech from './assets/work_logo/fintech.png' 
+import ratelimiter from './assets/work_logo/ratelimiter.png' 
+import trigger from './assets/work_logo/trigger.png' 
 
 // Helper for placeholder icons
 const companyIcon = "https://via.placeholder.com/150";
@@ -137,28 +140,28 @@ export const education = [
 
 export const projects = [
   {
-    id: 2,
-    title: "Rate Limiter Service",
-    description: "High-performance distributed rate limiting service handling millions of requests. Supports Token Bucket/Sliding Window algorithms, Redis-backed state, GRPC/REST interfaces, and smart webhook notifications.",
-    image: projectPlaceholder,
-    tags: ["TypeScript", "Redis", "Fastify", "Distributed Systems"],
-    github: "https://github.com/PrakarshSingh5/rate-limiter-service",
-    webapp: "#",
-  },
-  {
     id: 1,
     title: "FinTechKit 🚀",
     description: "Production-ready Go framework for fintech API integration. Features unified interfaces for Stripe/Razorpay/Plaid, built-in auth management, reliability patterns (circuit breakers, retries), and webhook handling.",
-    image: projectPlaceholder,
+    image: projectPlaceholder, // Replace with fintech when image is added
     tags: ["Go", "Fintech", "Stripe/Razorpay", "Fiber"],
     github: "https://github.com/PrakarshSingh5/fintechkit",
+    webapp: "#",
+  },
+  {
+    id: 2,
+    title: "Rate Limiter Service",
+    description: "High-performance distributed rate limiting service handling millions of requests. Supports Token Bucket/Sliding Window algorithms, Redis-backed state, GRPC/REST interfaces, and smart webhook notifications.",
+    image: projectPlaceholder, // Replace with ratelimiter when image is added
+    tags: ["TypeScript", "Redis", "Fastify", "Distributed Systems"],
+    github: "https://github.com/PrakarshSingh5/rate-limiter-service",
     webapp: "#",
   },
   {
     id: 3,
     title: "Trigger Database Engine",
     description: "Custom database trigger engine with its own DSL (Domain Specific Language). Parse and execute complex rules (ON update WHEN age > 18 DO set eligible=true) with infinite loop prevention and execution logging.",
-    image: projectPlaceholder,
+    image: projectPlaceholder, // Replace with trigger when image is added
     tags: ["Node.js", "AST Parsing", "React", "DSL Design"],
     github: "https://github.com/PrakarshSingh5",
     webapp: "#",
