@@ -30,10 +30,10 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'glass py-4' : 'bg-transparent py-8'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'glass py-4' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <a href="#" onClick={() => scrollToSection('#hero')} className="text-xl font-display font-medium tracking-tight text-text-primary hover:opacity-70 transition-opacity">
-          Prakarsh.
+        <a href="#hero" onClick={() => scrollToSection('#hero')} className="text-2xl font-display font-bold tracking-tight text-text-primary hover:opacity-80 transition-opacity">
+          Prakarsh<span className="text-primary">.</span>
         </a>
 
         {/* Desktop Menu */}
@@ -42,7 +42,7 @@ export const Navbar = () => {
             <button
               key={link.name}
               onClick={() => scrollToSection(link.href)}
-              className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors tracking-wide"
+              className="text-sm font-medium text-text-secondary hover:text-primary transition-colors tracking-wide"
             >
               {link.name}
             </button>
@@ -59,12 +59,12 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl border-b border-slate-100 p-8 flex flex-col space-y-6 shadow-soft">
+        <div className="md:hidden absolute top-full left-0 w-full bg-surface/95 backdrop-blur-xl border-b border-white/20 p-8 flex flex-col space-y-6 shadow-warm">
           {navLinks.map((link) => (
             <button
               key={link.name}
               onClick={() => scrollToSection(link.href)}
-              className="text-text-secondary hover:text-text-primary transition-colors font-medium text-lg text-left"
+              className="text-text-secondary hover:text-primary transition-colors font-medium text-lg text-left"
             >
               {link.name}
             </button>

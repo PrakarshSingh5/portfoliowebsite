@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply bg-background text-text-primary font-sans antialiased selection:bg-slate-200 selection:text-slate-800;
+    @apply bg-background text-text-primary font-sans antialiased selection:bg-primary-light selection:text-primary;
   }
 
   h1,
@@ -15,25 +15,28 @@
   h4,
   h5,
   h6 {
-    @apply font-display text-text-primary font-medium tracking-tight;
+    @apply font-display text-text-primary font-bold tracking-tight;
   }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-white/80 backdrop-blur-xl border-b border-slate-100/50;
+    @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-glass;
   }
 
   .glass-card {
-    @apply bg-surface rounded-xl border border-slate-100 shadow-soft hover:shadow-card transition-all duration-500 ease-out;
+    @apply bg-surface/80 backdrop-blur-md rounded-2xl border border-border/50 shadow-warm hover:shadow-warm-hover transition-all duration-300 ease-out hover:-translate-y-1;
   }
 
   .text-gradient {
-    @apply text-text-primary;
-    /* Removed gradient for cleaner look, or use very subtle one */
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-orange-500 to-secondary;
   }
 
   .section-padding {
-    @apply py-24 md:py-32;
+    @apply py-20 md:py-32;
+  }
+
+  .blob {
+    @apply absolute rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob;
   }
 }

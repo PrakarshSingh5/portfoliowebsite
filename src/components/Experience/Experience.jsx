@@ -1,56 +1,90 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { experiences } from '../../constants';
-import { Briefcase, Calendar } from 'lucide-react';
+import { Briefcase, Calendar, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 
 export const Experience = () => {
+    const [expandedId, setExpandedId] = useState(1); // First item expanded by default
+
+    const toggleExpand = (id) => {
+        setExpandedId(expandedId === id ? null : id);
+    };
+
     return (
-        <section id="experience" className="py-24">
-            <div className="max-w-7xl mx-auto px-6">
-                <div className="mb-20 text-center">
-                    <h2 className="text-3xl md:text-4xl font-medium mb-4 text-text-primary tracking-tight">Work <span className="text-slate-400">Experience</span></h2>
-                    <p className="text-text-secondary max-w-2xl mx-auto font-light">
-                        My professional journey in building software and solving problems.
+        <section id="experience" className="py-24 relative overflow-hidden">
+             {/* Background elements */}
+            <div className="absolute top-1/2 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10 transform -translate-y-1/2"></div>
+
+            <div className="max-w-4xl mx-auto px-6">
+                <div className="mb-16">
+                    <span className="text-primary font-semibold tracking-wider uppercase text-sm">Experience</span>
+                    <h2 className="text-4xl md:text-5xl font-bold mt-2 mb-4 text-text-primary tracking-tight">
+                        Professional <span className="text-secondary">Journey</span>
+                    </h2>
+                    <p className="text-text-secondary font-light text-lg">
+                        My work background in software engineering, AI, and full-stack development.
                     </p>
                 </div>
 
-                <div className="relative max-w-4xl mx-auto">
-                    {/* Vertical Line */}
-                    <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 h-full w-px bg-slate-200"></div>
-
-                    <div className="space-y-16">
-                        {experiences.map((exp, index) => (
-                            <div key={exp.id} className={`relative flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} gap-12`}>
-
-                                {/* Timeline Dot */}
-                                <div className="absolute left-[-4px] md:left-1/2 transform md:-translate-x-1/2 w-3 h-3 bg-white rounded-full border-2 border-slate-300 z-10 mt-8"></div>
-
-                                {/* Content */}
-                                <div className="md:w-1/2 pl-8 md:pl-0">
-                                    <div className={`glass-card p-8 relative ${index % 2 === 0 ? 'md:mr-12' : 'md:ml-12'} border-none shadow-soft hover:shadow-card bg-white group`}>
-                                        <div className="flex items-center justify-between mb-4">
-                                            <h3 className="text-xl font-medium text-text-primary tracking-tight">{exp.role}</h3>
-                                            <span className="text-xs font-medium px-3 py-1 bg-slate-50 rounded-full text-slate-500 flex items-center gap-1">
-                                                <Calendar size={12} strokeWidth={1.5} /> {exp.date}
-                                            </span>
-                                        </div>
-                                        <h4 className="text-lg text-slate-500 font-medium mb-6 flex items-center gap-2">
-                                            <Briefcase size={16} strokeWidth={1.5} /> {exp.company}
-                                        </h4>
-                                        <p className="text-text-secondary text-sm mb-6 leading-relaxed font-light">
-                                            {exp.desc}
+                <div className="space-y-4">
+                    {experiences.map((exp) => (
+                        <div 
+                            key={exp.id} 
+                            onClick={() => toggleExpand(exp.id)}
+                            className={`group relative border rounded-3xl transition-all duration-300 cursor-pointer overflow-hidden
+                                ${expandedId === exp.id 
+                                    ? 'bg-white border-primary/20 shadow-warm ring-1 ring-primary/10' 
+                                    : 'bg-white/40 border-white/60 hover:bg-white/60 hover:shadow-sm'
+                                }
+                            `}
+                        >
+                            <div className="p-6 md:p-8 flex flex-col md:flex-row gap-6 md:items-center justify-between">
+                                <div className="flex items-center gap-5">
+                                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-colors duration-300
+                                        ${expandedId === exp.id ? 'bg-primary text-white shadow-lg shadow-primary/30' : 'bg-white text-text-secondary shadow-sm border border-slate-100'}
+                                    `}>
+                                        <Briefcase size={24} strokeWidth={1.5} />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-text-primary flex items-center gap-2">
+                                            {exp.company}
+                                            <ExternalLink size={14} className="text-text-secondary opacity-0 group-hover:opacity-100 transition-opacity" />
+                                        </h3>
+                                        <p className={`font-medium transition-colors ${expandedId === exp.id ? 'text-primary' : 'text-text-secondary'}`}>
+                                            {exp.role}
                                         </p>
-                                        <div className="flex flex-wrap gap-2">
-                                            {exp.skills.map((skill, i) => (
-                                                <span key={i} className="text-xs px-3 py-1 bg-slate-50 rounded-full text-slate-600 font-medium tracking-wide">
-                                                    {skill}
-                                                </span>
-                                            ))}
-                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-center justify-between md:justify-end gap-6 pl-19 md:pl-0">
+                                    <span className="text-sm font-medium text-text-secondary/80 flex items-center gap-2 bg-white/50 px-3 py-1.5 rounded-full border border-white/60">
+                                        <Calendar size={14} /> {exp.date}
+                                    </span>
+                                    <div className={`p-2 rounded-full transition-transform duration-300 text-text-secondary ${expandedId === exp.id ? 'rotate-180 bg-primary/10 text-primary' : ''}`}>
+                                        <ChevronDown size={20} />
                                     </div>
                                 </div>
                             </div>
-                        ))}
-                    </div>
+
+                            {/* Expandable Content */}
+                            <div className={`
+                                transition-[max-height,opacity,padding] duration-500 ease-in-out overflow-hidden
+                                ${expandedId === exp.id ? 'max-h-96 opacity-100 pb-8 px-6 md:px-8' : 'max-h-0 opacity-0'}
+                            `}>
+                                <div className="pl-0 md:pl-[76px] space-y-4">
+                                    <p className="text-text-secondary leading-relaxed font-light text-base border-l-2 border-primary/20 pl-4">
+                                        {exp.desc}
+                                    </p>
+                                    <div className="flex flex-wrap gap-2 pl-4">
+                                        {exp.skills.map((skill, i) => (
+                                            <span key={i} className="text-xs px-3 py-1 bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-100/50 rounded-full text-text-secondary font-medium tracking-wide">
+                                                {skill}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

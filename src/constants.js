@@ -31,6 +31,7 @@ import mmmut from './assets/education_logo/mmmut.jpeg';
 
 // Project Images - Only importing what exists
 import algo from './assets/work_logo/algo.jpeg'
+import urlshortner from './assets/work_logo/urlshortner.jpeg'
 
 // Helper for placeholder icons
 const companyIcon = "https://via.placeholder.com/150";
@@ -92,25 +93,25 @@ export const experiences = [
     company: "FINMO",
     date: "Present",
     desc: "Building scalable backend systems and financial technology solutions. Integrated banking APIs like Veem and Wise for global payments and handled complex webhook architectures.",
-    skills: ["Node.js", "TypeScript", "Webhooks", "Veem/Wise API"],
+    skills: ["NestJS", "BullMQ", "Redis", "TypeScript", "Node.js", "API Integration"],
     logo: companyIcon
   },
   {
     id: 2,
-    role: "Backend Developer Intern",
+    role: "Shopify Developer Intern",
     company: "BlackBytt",
-    date: "Past",
-    desc: "Worked on backend architecture and API development.",
-    skills: ["Go", "Redis", "PostgreSQL"],
+    date: "Oct 2024 - Apr 2025",
+    desc: "Worked on Shopify store development and customization. Mastered Liquid, CSS, JS, and JSON for dynamic themes.",
+    skills: ["Liquid", "CSS", "JavaScript", "JSON", "Debugging"],
     logo: companyIcon
   },
   {
     id: 3,
-    role: "Frontend Intern",
-    company: "Newton School",
-    date: "Sep 2021 - Aug 2022",
-    desc: "Designed and implemented scalable UI components and responsive websites.",
-    skills: ["React", "HTML", "CSS", "Bootstrap"],
+    role: "Problem Setter Intern",
+    company: "iMocha",
+    date: "Nov 2022 - Jan 2024",
+    desc: "Created and curated Data Structures and Algorithms problems across multiple programming languages. Ensured high-quality test cases and problem statements.",
+    skills: ["C++", "Python", "Java", "DSA", "Problem Solving"],
     logo: companyIcon
   },
 ];
@@ -148,7 +149,7 @@ export const projects = [
     id: 3,
     title: "URL Shortener",
     description: "High-performance URL shortener built with Go, Redis, and Postgres.",
-    image: projectPlaceholder,
+    image: urlshortner,
     tags: ["Go", "Redis", "PostgreSQL"],
     github: "https://github.com/PrakarshSingh5/url-shortner",
     webapp: "#",
