@@ -4,7 +4,7 @@ import { Github, ExternalLink, Folder, ArrowUpRight } from 'lucide-react';
 
 export const Projects = () => {
   return (
-    <section id="projects" className="py-24 relative overflow-hidden">
+    <section id="projects" className="py-24 relative overflow-hidden scroll-mt-32">
       {/* Background Decor */}
       <div className="absolute right-0 top-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2"></div>
 

@@ -10,7 +10,7 @@ export const Experience = () => {
     };
 
     return (
-        <section id="experience" className="py-24 relative overflow-hidden">
+        <section id="experience" className="py-24 relative overflow-hidden scroll-mt-32">
              {/* Background elements */}
             <div className="absolute top-1/2 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10 transform -translate-y-1/2"></div>
 

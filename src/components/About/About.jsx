@@ -1,9 +1,10 @@
+
 import React from 'react';
 import { Code, Server, Database, Cpu } from 'lucide-react';
 
 export const About = () => {
   return (
-    <section id="about" className="py-24 relative overflow-hidden">
+    <section id="about" className="py-24 relative overflow-hidden scroll-mt-32">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-text-primary tracking-tight">
