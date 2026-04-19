@@ -61,8 +61,6 @@ export const SkillsInfo = [
       { name: 'Go', logo: cLogo },
       { name: 'Microservices', logo: aws },
       { name: 'Webhooks', logo: postmanLogo },
-      { name: 'Veem API', logo: aws },
-      { name: 'Wise API', logo: aws },
     ],
   },
   {
