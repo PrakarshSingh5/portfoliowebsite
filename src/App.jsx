@@ -15,12 +15,15 @@ function App() {
       <Navbar />
 
       <main className="relative">
-        {/* Subtle Background Pattern */}
+        {/* Dark Ambient Background */}
         <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-          <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-primary/10 rounded-full mix-blend-multiply filter blur-[100px] animate-blob"></div>
-          <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-secondary/10 rounded-full mix-blend-multiply filter blur-[100px] animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-[-10%] left-[20%] w-[600px] h-[600px] bg-accent/20 rounded-full mix-blend-multiply filter blur-[100px] animate-blob animation-delay-4000"></div>
+          <div className="absolute top-[-15%] left-[-5%] w-[600px] h-[600px] bg-primary/15 rounded-full filter blur-[120px] animate-blob"></div>
+          <div className="absolute top-[10%] right-[-10%] w-[500px] h-[500px] bg-secondary/10 rounded-full filter blur-[120px] animate-blob animation-delay-2000"></div>
+          <div className="absolute bottom-[-10%] left-[25%] w-[700px] h-[700px] bg-accent/8 rounded-full filter blur-[140px] animate-blob animation-delay-4000"></div>
         </div>
+
+        {/* Subtle grid overlay */}
+        <div className="fixed inset-0 pointer-events-none z-0 grid-overlay opacity-60"></div>
 
         <div className="relative z-10">
           <Hero />

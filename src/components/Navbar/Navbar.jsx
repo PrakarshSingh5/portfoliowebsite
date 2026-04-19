@@ -44,9 +44,10 @@ export const Navbar = () => {
       <div 
         className={`max-w-7xl mx-auto flex justify-between items-center transition-all duration-300 ${
           scrolled 
-          ? 'glass rounded-full px-6 py-3 border border-white/40 shadow-xl bg-white/70 backdrop-blur-xl' 
+          ? 'rounded-full px-6 py-3 border border-white/10 shadow-card backdrop-blur-xl' 
           : 'bg-transparent'
         }`}
+        style={scrolled ? { background: 'rgba(14,14,20,0.85)' } : {}}
       >
         {/* Logo */}
         <a 
@@ -54,7 +55,7 @@ export const Navbar = () => {
           onClick={(e) => scrollToSection(e, '#hero')} 
           className="text-2xl font-bold tracking-tight text-text-primary group relative z-50"
         >
-          Prakarsh<span className="text-secondary group-hover:text-primary transition-colors">.</span>
+          Prakarsh<span className="text-primary group-hover:text-secondary transition-colors">.</span>
         </a>
 
         {/* Desktop Menu */}
@@ -64,7 +65,7 @@ export const Navbar = () => {
               key={link.name}
               href={link.href}
               onClick={(e) => scrollToSection(e, link.href)}
-              className="relative px-4 py-2 text-sm font-medium text-text-secondary hover:text-text-primary transition-colors rounded-full hover:bg-white/50 group overflow-hidden"
+              className="relative px-4 py-2 text-sm font-medium text-text-secondary hover:text-text-primary transition-colors rounded-full hover:bg-white/5 group overflow-hidden"
             >
               <span className="relative z-10">{link.name}</span>
             </a>
@@ -76,7 +77,8 @@ export const Navbar = () => {
             <a 
                 href="#contact" 
                 onClick={(e) => scrollToSection(e, '#contact')}
-                className="px-5 py-2.5 rounded-full bg-text-primary text-white text-sm font-medium shadow-lg shadow-text-primary/20 hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-95"
+                className="px-5 py-2.5 rounded-full text-white text-sm font-semibold hover:opacity-90 hover:-translate-y-0.5 transition-all active:scale-95"
+                style={{ background: 'linear-gradient(135deg, #6366F1, #A78BFA)', boxShadow: '0 0 20px rgba(99,102,241,0.3)' }}
             >
                 Contact Me
             </a>
@@ -86,7 +88,7 @@ export const Navbar = () => {
         <div className="md:hidden z-50">
           <button 
             onClick={() => setIsOpen(!isOpen)} 
-            className="p-2 text-text-primary hover:bg-white/50 rounded-full transition-all"
+            className="p-2 text-text-primary hover:bg-white/10 rounded-full transition-all"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -95,9 +97,10 @@ export const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       <div 
-        className={`fixed inset-0 bg-background/95 backdrop-blur-3xl z-40 md:hidden transition-all duration-500 ease-in-out flex flex-col justify-center items-center space-y-8 ${
+        className={`fixed inset-0 backdrop-blur-2xl z-40 md:hidden transition-all duration-500 ease-in-out flex flex-col justify-center items-center space-y-8 ${
           isOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-10'
         }`}
+        style={{ background: 'rgba(9,9,11,0.97)' }}
       >
         {navLinks.map((link) => (
           <a
@@ -112,7 +115,8 @@ export const Navbar = () => {
         <a 
             href="#contact"
             onClick={(e) => scrollToSection(e, '#contact')}
-            className="px-8 py-4 rounded-full bg-text-primary text-white text-lg font-medium shadow-xl mt-4"
+            className="px-8 py-4 rounded-full text-white text-lg font-semibold shadow-xl mt-4 hover:opacity-90 transition-opacity"
+            style={{ background: 'linear-gradient(135deg, #6366F1, #A78BFA)', boxShadow: '0 0 30px rgba(99,102,241,0.3)' }}
         >
             Contact Me
         </a>

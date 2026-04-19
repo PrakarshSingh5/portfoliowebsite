@@ -1,42 +1,88 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  * {
+    @apply border-border;
+  }
   body {
-    @apply bg-background text-text-primary font-sans antialiased selection:bg-primary-light selection:text-primary;
+    @apply bg-background text-text-primary font-sans antialiased;
+    selection-color: #6366F1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  ::selection {
+    background-color: rgba(99, 102, 241, 0.3);
+    color: #F4F4F5;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
     @apply font-display text-text-primary font-bold tracking-tight;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #09090B;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #3F3F46;
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6366F1;
   }
 }
 
 @layer utilities {
+  /* Dark glassmorphism */
   .glass {
-    @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-glass;
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-card;
   }
 
   .glass-card {
-    @apply bg-surface/80 backdrop-blur-md rounded-2xl border border-border/50 shadow-warm hover:shadow-warm-hover transition-all duration-300 ease-out hover:-translate-y-1;
+    @apply bg-surface-2/80 backdrop-blur-md rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 ease-out hover:-translate-y-1 hover:border-border-light;
   }
 
+  /* Shimmer text gradient */
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-orange-500 to-secondary;
+    background: linear-gradient(90deg, #6366F1, #A78BFA, #38BDF8, #6366F1);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+  }
+
+  .text-gradient-static {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
   }
 
   .section-padding {
     @apply py-20 md:py-32;
   }
 
+  /* Grid overlay for dark hero backgrounds */
+  .grid-overlay {
+    background-image: linear-gradient(rgba(99,102,241,0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(99,102,241,0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .glow-border {
+    box-shadow: 0 0 0 1px rgba(99,102,241,0.3), 0 0 20px rgba(99,102,241,0.1);
+  }
+
+  .glow-border:hover {
+    box-shadow: 0 0 0 1px rgba(99,102,241,0.6), 0 0 30px rgba(99,102,241,0.2);
+  }
+
   .blob {
-    @apply absolute rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob;
+    @apply absolute rounded-full filter blur-[80px] opacity-30 animate-blob;
   }
 }
