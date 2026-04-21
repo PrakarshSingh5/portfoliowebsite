@@ -8,18 +8,20 @@ export const Education = () => {
       className="pt-24 px-[12vw] md:px-[7vw] lg:px-[14vw] font-sans bg-skills-gradient clip-path-custom-3"
     >
       {/* Section Title */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-black">EDUCATION</h2>
-        <div className="w-56 h-1 bg-gray-500 mx-auto mt-4"></div>
-        <p className="text-gray-400 mt-4 text-lg font-semibold">
-          My education has been a journey of learning and development. Here are the details of my academic background.
+      <div className="text-center mb-16 px-6">
+        <h2 className="text-4xl md:text-5xl font-bold text-text-primary tracking-tight">
+          Academic <span className="text-secondary">Background</span>
+        </h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-6 rounded-full" />
+        <p className="text-text-secondary mt-6 text-lg font-light max-w-2xl mx-auto">
+          My education has been a journey of discovery and growth, building a strong foundation in engineering and problem solving.
         </p>
       </div>
 
       {/* Timeline Container */}
-      <div className="relative">
+      <div className="relative max-w-5xl mx-auto">
         {/* Vertical Line */}
-        <div className="hidden sm:block absolute left-1/2 top-0 transform -translate-x-1/2 w-1 bg-black h-full z-0"></div>
+        <div className="hidden sm:block absolute left-1/2 top-0 transform -translate-x-1/2 w-0.5 bg-gradient-to-b from-primary/50 via-secondary/50 to-transparent h-full z-0" />
 
         {education.map((edu, index) => {
           const isLeft = index % 2 === 0;
@@ -31,28 +33,31 @@ export const Education = () => {
                 }`}
             >
               {/* Timeline Dot */}
-              <div className="hidden sm:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-black border-4 border-white rounded-full z-10"></div>
+              <div className="hidden sm:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-background border-2 border-primary rounded-full z-10 shadow-glow-sm" />
 
               {/* Card */}
               <div
-                className={`w-full sm:w-[45%] p-6 rounded-2xl border border-gray-300 bg-white shadow-xl transition-transform duration-300 hover:scale-105 ${isLeft ? "sm:ml-0 sm:mr-auto" : "sm:ml-auto sm:mr-0"
+                className={`w-full sm:w-[45%] glass-card p-8 group transition-all duration-500 hover:-translate-y-2 ${isLeft ? "sm:ml-0 sm:mr-auto" : "sm:ml-auto sm:mr-0"
                   }`}
               >
-                <div className="flex items-center space-x-4">
-                  <div className="w-24 h-16 bg-black rounded overflow-hidden">
+                <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                  <div className="w-20 h-20 bg-surface-3 rounded-2xl p-2 border border-white/5 flex-shrink-0">
                     <img
                       src={edu.img}
                       alt={edu.school}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain rounded-xl"
                     />
                   </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-black">{edu.degree}</h3>
-                    <p className="text-sm text-gray-600">{edu.school}</p>
-                    <p className="text-sm text-gray-400 mt-1">{edu.date}</p>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-text-primary group-hover:text-primary transition-colors leading-tight">{edu.degree}</h3>
+                    <p className="text-text-secondary mt-1 font-medium">{edu.school}</p>
+                    <p className="text-xs text-text-muted mt-2 uppercase tracking-widest bg-white/5 inline-block px-2 py-1 rounded">{edu.date}</p>
                   </div>
                 </div>
-                <p className="mt-4 text-gray-500 font-semibold">Grade: {edu.grade}</p>
+                <div className="mt-6 pt-4 border-t border-white/5 flex justify-between items-center text-sm">
+                    <span className="text-text-secondary">Performance</span>
+                    <span className="text-primary font-bold">{edu.grade}</span>
+                </div>
               </div>
             </div>
           );

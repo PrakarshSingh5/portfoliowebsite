@@ -16,19 +16,22 @@ export const Skills = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {SkillsInfo.map((category, index) => (
-            <div key={index} className="glass-card p-8 border border-white/50 shadow-warm hover:shadow-warm-hover bg-white/60 hover:-translate-y-1 transition-all duration-300">
-              <h3 className="text-xl font-bold text-text-primary mb-8 border-b border-primary/10 pb-4 tracking-tight">{category.title}</h3>
+            <div key={index} className="glass-card p-8 group/card">
+              <h3 className="text-xl font-bold text-text-primary mb-8 border-b border-white/5 pb-4 tracking-tight flex items-center justify-between">
+                {category.title}
+                <div className="w-2 h-2 rounded-full bg-primary/40 group-hover/card:bg-primary transition-colors" />
+              </h3>
               <div className="grid grid-cols-2 gap-6">
                 {category.skills.map((skill, i) => (
                   <div key={i} className="flex flex-col items-center gap-3 group">
-                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center p-3 shadow-sm border border-slate-100 group-hover:border-primary/30 group-hover:scale-110 transition-all duration-300">
+                    <div className="w-14 h-14 bg-surface-3 rounded-2xl flex items-center justify-center p-3 shadow-inner border border-white/5 group-hover:border-primary/50 group-hover:scale-110 transition-all duration-300">
                       {skill.logo ? (
-                        <img src={skill.logo} alt={skill.name} className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-80 group-hover:opacity-100" />
+                        <img src={skill.logo} alt={skill.name} className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-60 group-hover:opacity-100" />
                       ) : (
-                        <div className="w-full h-full bg-slate-200 rounded-full"></div>
+                        <div className="w-full h-full bg-surface-2 rounded-full"></div>
                       )}
                     </div>
-                    <span className="text-xs text-text-secondary group-hover:text-primary transition-colors text-center font-medium tracking-wide">{skill.name}</span>
+                    <span className="text-xs text-text-secondary group-hover:text-text-primary transition-colors text-center font-medium tracking-wide">{skill.name}</span>
                   </div>
                 ))}
               </div>

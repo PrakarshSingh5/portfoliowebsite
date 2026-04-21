@@ -21,33 +21,29 @@ export const Projects = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="group flex flex-col h-full rounded-2xl border border-border hover:border-border-light overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-card-hover"
-              style={{ background: 'rgba(18,18,22,0.85)' }}
+              className="glass-card group flex flex-col h-full overflow-hidden"
             >
               {/* Project Image */}
-              <div className="relative h-52 overflow-hidden" style={{ background: '#111116' }}>
+              <div className="relative h-52 overflow-hidden bg-surface-3">
                 {project.image && project.image !== 'https://via.placeholder.com/600x400' ? (
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100"
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center"
-                    style={{ background: 'linear-gradient(135deg, rgba(99,102,241,0.08), rgba(167,139,250,0.05))' }}
-                  >
-                    <Folder size={48} className="text-primary/30" strokeWidth={1.5} />
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/5">
+                    <Folder size={48} className="text-primary/20" strokeWidth={1.5} />
                   </div>
                 )}
 
                 {/* Overlay Links */}
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4 backdrop-blur-[2px]">
+                <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-4 backdrop-blur-sm">
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-full text-white border border-white/20 hover:bg-primary hover:border-primary hover:scale-110 transition-all shadow-lg"
-                    style={{ background: 'rgba(255,255,255,0.1)' }}
+                    className="p-3 rounded-xl text-white bg-white/10 border border-white/10 hover:bg-primary hover:border-primary hover:scale-110 transition-all shadow-glow-sm"
                     title="View Code"
                   >
                     <Github size={20} strokeWidth={2} />
@@ -57,8 +53,7 @@ export const Projects = () => {
                       href={project.webapp}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 rounded-full text-white border border-white/20 hover:bg-primary hover:border-primary hover:scale-110 transition-all shadow-lg"
-                      style={{ background: 'rgba(255,255,255,0.1)' }}
+                      className="p-3 rounded-xl text-white bg-white/10 border border-white/10 hover:bg-primary hover:border-primary hover:scale-110 transition-all shadow-glow-sm"
                       title="View Live Demo"
                     >
                       <ExternalLink size={20} strokeWidth={2} />
@@ -68,9 +63,9 @@ export const Projects = () => {
               </div>
 
               {/* Card Body */}
-              <div className="p-6 flex flex-col flex-grow border-t border-border/60">
+              <div className="p-6 flex flex-col flex-grow border-t border-white/5">
                 <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-lg font-bold text-text-primary group-hover:text-primary transition-colors tracking-tight leading-snug">
+                  <h3 className="text-xl font-bold text-text-primary group-hover:text-primary transition-colors tracking-tight leading-snug">
                     {project.title}
                   </h3>
                   {project.webapp && project.webapp !== '#' ? (
@@ -85,7 +80,7 @@ export const Projects = () => {
                   ) : null}
                 </div>
 
-                <p className="text-text-secondary text-sm mb-6 line-clamp-3 leading-relaxed">
+                <p className="text-text-secondary text-sm mb-6 line-clamp-3 leading-relaxed font-light">
                   {project.description}
                 </p>
 
@@ -94,8 +89,7 @@ export const Projects = () => {
                   {project.tags.map((tag, i) => (
                     <span
                       key={i}
-                      className="text-xs px-2.5 py-1 rounded-md font-medium text-text-secondary border border-border hover:border-primary/40 hover:text-primary transition-colors"
-                      style={{ background: 'rgba(255,255,255,0.04)' }}
+                      className="text-[10px] px-2.5 py-1 rounded-md font-bold text-text-muted border border-white/5 bg-white/5 uppercase tracking-wider hover:border-primary/30 hover:text-primary transition-colors"
                     >
                       {tag}
                     </span>
