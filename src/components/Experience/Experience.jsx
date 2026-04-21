@@ -30,17 +30,19 @@ export const Experience = () => {
                         <div 
                             key={exp.id} 
                             onClick={() => toggleExpand(exp.id)}
-                            className={`group relative border rounded-3xl transition-all duration-300 cursor-pointer overflow-hidden
+                            className={`group relative border rounded-3xl transition-all duration-500 cursor-pointer overflow-hidden
                                 ${expandedId === exp.id 
-                                    ? 'bg-white border-primary/20 shadow-warm ring-1 ring-primary/10' 
-                                    : 'bg-white/40 border-white/60 hover:bg-white/60 hover:shadow-sm'
+                                    ? 'bg-surface-2 border-primary/30 shadow-glow-sm' 
+                                    : 'bg-surface/40 border-border/50 hover:bg-surface-2 hover:border-border-light'
                                 }
                             `}
                         >
                             <div className="p-6 md:p-8 flex flex-col md:flex-row gap-6 md:items-center justify-between">
                                 <div className="flex items-center gap-5">
-                                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-colors duration-300
-                                        ${expandedId === exp.id ? 'bg-primary text-white shadow-lg shadow-primary/30' : 'bg-white text-text-secondary shadow-sm border border-slate-100'}
+                                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300
+                                        ${expandedId === exp.id 
+                                            ? 'bg-gradient-to-br from-primary to-secondary text-white shadow-glow' 
+                                            : 'bg-surface-3 text-text-secondary border border-border'}
                                     `}>
                                         <Briefcase size={24} strokeWidth={1.5} />
                                     </div>
@@ -56,7 +58,7 @@ export const Experience = () => {
                                 </div>
 
                                 <div className="flex items-center justify-between md:justify-end gap-6 pl-19 md:pl-0">
-                                    <span className="text-sm font-medium text-text-secondary/80 flex items-center gap-2 bg-white/50 px-3 py-1.5 rounded-full border border-white/60">
+                                    <span className="text-sm font-medium text-text-secondary/80 flex items-center gap-2 bg-surface-3/50 px-3 py-1.5 rounded-full border border-border/50">
                                         <Calendar size={14} /> {exp.date}
                                     </span>
                                     <div className={`p-2 rounded-full transition-transform duration-300 text-text-secondary ${expandedId === exp.id ? 'rotate-180 bg-primary/10 text-primary' : ''}`}>
@@ -76,7 +78,7 @@ export const Experience = () => {
                                     </p>
                                     <div className="flex flex-wrap gap-2 pl-4">
                                         {exp.skills.map((skill, i) => (
-                                            <span key={i} className="text-xs px-3 py-1 bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-100/50 rounded-full text-text-secondary font-medium tracking-wide">
+                                            <span key={i} className="text-xs px-3 py-1 bg-primary/5 border border-primary/10 rounded-full text-text-secondary font-medium tracking-wide">
                                                 {skill}
                                             </span>
                                         ))}

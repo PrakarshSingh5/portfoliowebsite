@@ -36,7 +36,7 @@ export const Contact = () => {
 
             <div className="space-y-6">
               <div className="flex items-center gap-5 group">
-                <div className="p-4 bg-white/80 rounded-full text-primary shadow-warm border border-white/50 group-hover:scale-110 transition-transform">
+                <div className="p-4 bg-surface-3 rounded-2xl text-primary border border-white/5 group-hover:border-primary/50 group-hover:scale-110 transition-all shadow-glow-sm">
                   <Mail size={22} strokeWidth={1.5} />
                 </div>
                 <div>
@@ -46,7 +46,7 @@ export const Contact = () => {
               </div>
 
               <div className="flex items-center gap-5 group">
-                <div className="p-4 bg-white/80 rounded-full text-primary shadow-warm border border-white/50 group-hover:scale-110 transition-transform">
+                <div className="p-4 bg-surface-3 rounded-2xl text-primary border border-white/5 group-hover:border-primary/50 group-hover:scale-110 transition-all shadow-glow-sm">
                   <MapPin size={22} strokeWidth={1.5} />
                 </div>
                 <div>
@@ -59,13 +59,13 @@ export const Contact = () => {
             <div className="pt-8">
               <h4 className="text-text-primary font-bold mb-6 tracking-wide text-lg">Follow Me</h4>
               <div className="flex gap-4">
-                <a href="https://github.com/PrakarshSingh5" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/80 rounded-full text-text-secondary hover:text-primary hover:-translate-y-1 transition-all shadow-warm border border-white/50 hover:shadow-warm-hover">
+                <a href="https://github.com/PrakarshSingh5" target="_blank" rel="noopener noreferrer" className="p-4 bg-surface-3 rounded-2xl text-text-secondary hover:text-primary hover:-translate-y-1 transition-all border border-white/5 hover:border-primary/50 shadow-glow-sm hover:shadow-glow">
                   <Github size={22} strokeWidth={1.5} />
                 </a>
-                <a href="https://www.linkedin.com/in/prakarshsinghdev/" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/80 rounded-full text-text-secondary hover:text-primary hover:-translate-y-1 transition-all shadow-warm border border-white/50 hover:shadow-warm-hover">
+                <a href="https://www.linkedin.com/in/prakarshsinghdev/" target="_blank" rel="noopener noreferrer" className="p-4 bg-surface-3 rounded-2xl text-text-secondary hover:text-primary hover:-translate-y-1 transition-all border border-white/5 hover:border-primary/50 shadow-glow-sm hover:shadow-glow">
                   <Linkedin size={22} strokeWidth={1.5} />
                 </a>
-                <a href="https://x.com/prakarshsingh_" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/80 rounded-full text-text-secondary hover:text-primary hover:-translate-y-1 transition-all shadow-warm border border-white/50 hover:shadow-warm-hover">
+                <a href="https://x.com/prakarshsingh_" target="_blank" rel="noopener noreferrer" className="p-4 bg-surface-3 rounded-2xl text-text-secondary hover:text-primary hover:-translate-y-1 transition-all border border-white/5 hover:border-primary/50 shadow-glow-sm hover:shadow-glow">
                   <Twitter size={22} strokeWidth={1.5} />
                 </a>
               </div>
@@ -73,7 +73,7 @@ export const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="glass-card p-8 md:p-10 rounded-3xl border border-white/60 shadow-warm bg-white/60">
+          <div className="glass-card p-8 md:p-10">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-bold text-text-primary mb-2 tracking-wide">Name</label>
@@ -84,7 +84,7 @@ export const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full bg-white/50 border border-white/40 rounded-xl px-6 py-4 text-text-primary focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all placeholder:text-text-secondary/50 font-medium"
+                  className="w-full bg-surface-3/50 border border-white/10 rounded-xl px-6 py-4 text-text-primary focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transitions-all placeholder:text-text-muted font-medium"
                   placeholder="Your Name"
                 />
               </div>
@@ -97,7 +97,7 @@ export const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full bg-white/50 border border-white/40 rounded-xl px-6 py-4 text-text-primary focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all placeholder:text-text-secondary/50 font-medium"
+                  className="w-full bg-surface-3/50 border border-white/10 rounded-xl px-6 py-4 text-text-primary focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transitions-all placeholder:text-text-muted font-medium"
                   placeholder="your@email.com"
                 />
               </div>
@@ -110,7 +110,7 @@ export const Contact = () => {
                   onChange={handleChange}
                   required
                   rows="4"
-                  className="w-full bg-white/50 border border-white/40 rounded-xl px-6 py-4 text-text-primary focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all resize-none placeholder:text-text-secondary/50 font-medium"
+                  className="w-full bg-surface-3/50 border border-white/10 rounded-xl px-6 py-4 text-text-primary focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transitions-all resize-none placeholder:text-text-muted font-medium"
                   placeholder="What's on your mind?"
                 ></textarea>
               </div>

@@ -29,33 +29,33 @@ export const About = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="glass-card p-6 flex flex-col items-center text-center space-y-4 border border-white/40 shadow-warm hover:shadow-warm-hover bg-white/60">
-              <div className="p-3 bg-primary/10 rounded-full text-primary">
+            <div className="glass-card p-6 flex flex-col items-center text-center space-y-4">
+              <div className="p-4 bg-primary/10 rounded-2xl text-primary transition-colors hover:bg-primary/20">
                 <Server size={32} strokeWidth={1.5} />
               </div>
-              <h3 className="font-bold text-text-primary text-lg">Backend Dev</h3>
-              <p className="text-sm text-text-secondary font-medium">Node.js, Go, Microservices</p>
+              <h3 className="font-bold text-text-primary text-xl">Backend Dev</h3>
+              <p className="text-sm text-text-secondary leading-relaxed">Node.js, Go, Microservices</p>
             </div>
-            <div className="glass-card p-6 flex flex-col items-center text-center space-y-4 border border-white/40 shadow-warm hover:shadow-warm-hover bg-white/60">
-              <div className="p-3 bg-secondary/10 rounded-full text-secondary">
+            <div className="glass-card p-6 flex flex-col items-center text-center space-y-4">
+              <div className="p-4 bg-secondary/10 rounded-2xl text-secondary transition-colors hover:bg-secondary/20">
                 <Cpu size={32} strokeWidth={1.5} />
               </div>
-              <h3 className="font-bold text-text-primary text-lg">AI Automation</h3>
-              <p className="text-sm text-text-secondary font-medium">LangChain, LLMs, Agents</p>
+              <h3 className="font-bold text-text-primary text-xl">AI Automation</h3>
+              <p className="text-sm text-text-secondary leading-relaxed">LangChain, LLMs, Agents</p>
             </div>
-            <div className="glass-card p-6 flex flex-col items-center text-center space-y-4 border border-white/40 shadow-warm hover:shadow-warm-hover bg-white/60">
-              <div className="p-3 bg-accent/30 rounded-full text-yellow-600">
+            <div className="glass-card p-6 flex flex-col items-center text-center space-y-4">
+              <div className="p-4 bg-accent/10 rounded-2xl text-accent transition-colors hover:bg-accent/20">
                 <Database size={32} strokeWidth={1.5} />
               </div>
-              <h3 className="font-bold text-text-primary text-lg">Database</h3>
-              <p className="text-sm text-text-secondary font-medium">Postgres, Redis, Mongo</p>
+              <h3 className="font-bold text-text-primary text-xl">Database</h3>
+              <p className="text-sm text-text-secondary leading-relaxed">Postgres, Redis, Mongo</p>
             </div>
-            <div className="glass-card p-6 flex flex-col items-center text-center space-y-4 border border-white/40 shadow-warm hover:shadow-warm-hover bg-white/60">
-              <div className="p-3 bg-slate-100 rounded-full text-slate-600">
+            <div className="glass-card p-6 flex flex-col items-center text-center space-y-4">
+              <div className="p-4 bg-primary/10 rounded-2xl text-primary transition-colors hover:bg-primary/20">
                 <Code size={32} strokeWidth={1.5} />
               </div>
-              <h3 className="font-bold text-text-primary text-lg">Clean Code</h3>
-              <p className="text-sm text-text-secondary font-medium">TypeScript, Testing, CI/CD</p>
+              <h3 className="font-bold text-text-primary text-xl">Clean Code</h3>
+              <p className="text-sm text-text-secondary leading-relaxed">TypeScript, Testing, CI/CD</p>
             </div>
           </div>
         </div>
