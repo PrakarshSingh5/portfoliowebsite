@@ -82,7 +82,7 @@ export const SkillsInfo = [
       { name: 'Redis', logo: redis },
       { name: 'AWS', logo: aws },
       { name: 'Docker', logo: aws },
-      { name: 'Firebase', logo: firebaseLogo },
+      { name: 'GraphDatbase', logo: firebaseLogo },
     ],
   },
 ];
