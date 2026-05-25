@@ -122,8 +122,8 @@ export const education = [
     id: 1,
     img: mmmut,
     school: "MMMUT, Gorakhpur",
-    date: "Dec 2021 - May 2025",
-    grade: "8.5 CGPA",
+    date: "Dec 2021 -  2025",
+    grade: "8.56 CGPA",
     degree: "B.Tech (Electronics and Communication Engineering)",
   },
   {
