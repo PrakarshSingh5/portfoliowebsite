@@ -60,7 +60,7 @@ export const SkillsInfo = [
       { name: 'Nest JS', logo: nodejsLogo },
       { name: 'Go', logo: cLogo },
       { name: 'Microservices', logo: aws },
-      // { name: 'Webhooks', logo: postmanLogo },
+      { name: 'Webhooks', logo: postmanLogo },
     ],
   },
   {
