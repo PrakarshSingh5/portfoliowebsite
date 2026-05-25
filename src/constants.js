@@ -52,17 +52,17 @@ export const SkillsInfo = [
       { name: 'RAG Pipelines', logo: databaseIcon },
     ],
   },
-  {
-    title: 'Backend',
-    skills: [
-      { name: 'Node JS', logo: nodejsLogo },
-      { name: 'Express JS', logo: expressjsLogo },
-      { name: 'Nest JS', logo: nodejsLogo },
-      { name: 'Go', logo: cLogo },
-      { name: 'Microservices', logo: aws },
-      { name: 'Webhooks', logo: postmanLogo },
-    ],
-  },
+  // {
+  //   title: 'Backend',
+  //   skills: [
+  //     { name: 'Node JS', logo: nodejsLogo },
+  //     { name: 'Express JS', logo: expressjsLogo },
+  //     { name: 'Nest JS', logo: nodejsLogo },
+  //     { name: 'Go', logo: cLogo },
+  //     { name: 'Microservices', logo: aws },
+  //     { name: 'Webhooks', logo: postmanLogo },
+  //   ],
+  // },
   {
     title: 'Frontend',
     skills: [
