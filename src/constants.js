@@ -43,7 +43,7 @@ const projectPlaceholder = "https://via.placeholder.com/600x400";
 
 export const SkillsInfo = [
   {
-    title: 'AI & Automation',
+    title: 'Gen AI & Automation',
     skills: [
       { name: 'Agentic AI', logo: pythonLogo },
       { name: 'LLMs', logo: pythonLogo },
