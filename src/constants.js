@@ -138,6 +138,15 @@ export const education = [
 
 export const projects = [
   {
+    id: 7,
+    title: "FinBoard",
+    description: "A multi-agent research tool for stocks. Five specialized AI agents (router, data gatherer, analyst, critic, writer) collaborate to verify facts and write reports based on real financial API data. Features strict data passing, guardrails, hallucination-free charts, and a live activity feed.",
+    image: projectPlaceholder,
+    tags: ["Next.js", "TypeScript", "Groq Llama 3.3", "Recharts", "AI Agents"],
+    github: "#",
+    webapp: "https://lnkd.in/dC6aNG4q",
+  },
+  {
     id: 1,
     title: "FinTechKit 🚀",
     description: "Production-ready Go framework for fintech API integration. Features unified interfaces for Stripe/Razorpay/Plaid, built-in auth management, reliability patterns (circuit breakers, retries), and webhook handling.",
