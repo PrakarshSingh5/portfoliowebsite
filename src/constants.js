@@ -35,6 +35,7 @@ import urlshortner from './assets/work_logo/urlshortner.jpeg'
 import fintech from './assets/work_logo/fintech.jpeg' 
 import ratelimiter from './assets/work_logo/ratelimiter.jpeg' 
 import trigger from './assets/work_logo/trigger.jpeg' 
+import customerRouter from './assets/work_logo/customer_router.png'
 
 // Helper for placeholder icons
 const companyIcon = "https://via.placeholder.com/150";
@@ -137,6 +138,15 @@ export const education = [
 ];
 
 export const projects = [
+  {
+    id: 8,
+    title: "AI Customer Support Router",
+    description: "An AI-powered customer support router built on an event-driven architecture with Kafka. Incoming tickets flow through independent microservices (ingestion → classification/RAG lookup → routing → resolution) and are intelligently routed in real time — either answered instantly by AI from a knowledge base (pgvector RAG), or escalated to the right human team (Billing/Tech/Refund). Features fault-tolerant exactly-once processing and live WebSocket updates.",
+    image: customerRouter,
+    tags: ["Node.js", "Kafka", "PostgreSQL", "pgvector", "RAG", "React", "WebSockets", "Event-Driven"],
+    github: "https://lnkd.in/d7WCwSFs",
+    webapp: "#",
+  },
   {
     id: 7,
     title: "FinBoard",
